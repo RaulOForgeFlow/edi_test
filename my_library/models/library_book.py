@@ -5,7 +5,7 @@ from odoo.exceptions import UserError
 
 class LibraryBook(models.Model):
     _name = 'library.book'
-    _description = 'Library Book'
+    _description = 'Library to manage books'
     _inherit = "edi.exchange.consumer.mixin"
 
     name = fields.Char("Title", requiered=True)
