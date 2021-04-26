@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<RequestForQuotation
+        xmlns="urn:oasis:names:specification:ubl:schema:xsd:Quotation-2"
+        xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+>
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:ID>S00002</cbc:ID>
+  <cbc:IssueDate>2021-04-26</cbc:IssueDate>
+  <cbc:IssueTime>09:34:06</cbc:IssueTime>
+  <cbc:PricingCurrencyCode>USD</cbc:PricingCurrencyCode>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>http://www.example.com</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>YourCompany</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+        <cbc:CityName>San Francisco</cbc:CityName>
+        <cbc:PostalZone>94134</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>YourCompany</cbc:RegistrationName>
+        <cac:RegistrationAddress>
+          <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+          <cbc:CityName>San Francisco</cbc:CityName>
+          <cbc:PostalZone>94134</cbc:PostalZone>
+          <cbc:CountrySubentity>California</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            <cbc:Name>United States</cbc:Name>
+          </cac:Country>
+        </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Telephone>+1 (650) 691-3277 </cbc:Telephone>
+        <cbc:ElectronicMail>info@yourcompany.example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>http://www.ready-mat.com/</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>Ready Mat</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>7500 W Linne Road</cbc:StreetName>
+        <cbc:CityName>Tracy</cbc:CityName>
+        <cbc:PostalZone>95304</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Telephone>(803)-873-6126</cbc:Telephone>
+        <cbc:ElectronicMail>ready.mat28@example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cac:Address>
+        <cbc:StreetName>7500 W Linne Road</cbc:StreetName>
+        <cbc:CityName>Tracy</cbc:CityName>
+        <cbc:PostalZone>95304</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+    <cac:DeliveryParty>
+      <cbc:WebsiteURI>http://www.ready-mat.com/</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>Ready Mat</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>7500 W Linne Road</cbc:StreetName>
+        <cbc:CityName>Tracy</cbc:CityName>
+        <cbc:PostalZone>95304</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Kim Snyder</cbc:Name>
+        <cbc:Telephone>(215)-379-4865</cbc:Telephone>
+        <cbc:ElectronicMail>kim.snyder96@example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:DeliveryParty>
+  </cac:Delivery>
+  <cac:QuotedMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="USD">2947.5</cbc:LineExtensionAmount>
+    <cbc:TaxInclusiveAmount currencyID="USD">2947.5</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="USD">2947.5</cbc:PayableAmount>
+  </cac:QuotedMonetaryTotal>
+  <cac:QuotationLine>
+    <cac:LineItem>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Quantity unitCode="HUR">24.0</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="USD">1800.0</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="USD">75.0</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="HUR">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Virtual Interior Design</cbc:Description>
+        <cbc:Name>Virtual Interior Design</cbc:Name>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+  <cac:QuotationLine>
+    <cac:LineItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Quantity unitCode="HUR">30.0</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="USD">1147.5</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="USD">38.25</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="HUR">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Virtual Home Staging</cbc:Description>
+        <cbc:Name>Virtual Home Staging</cbc:Name>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:QuotationLine>
+</RequestForQuotation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="book_backend_type" model="edi.backend.type">
+        <field name="name">Book Backend type</field>
+        <field name="code">book</field>
+    </record>
+
+    <record id="book_webservice" model="webservice.backend">
+        <field name="name">Book Webservice</field>
+        <field name="code">book_webservice</field>
+        <field name="protocol">sftp</field>
+        <field name="url">192.168.1.50</field>
+        <field name="username">ftpuser</field>
+        <field name="password">userftpPassword</field>
+        <field name="content_type">application/json</field>
+    </record>
+
+    <record id="book_backend" model="edi.backend">
+        <field name="name">Book</field>
+        <field name="backend_type_id" ref="book_backend_type" />
+        <field name="webservice_backend_id" ref="book_webservice" />
+    </record>
+
+    <record id="book_title_exchange_type" model="edi.exchange.type">
+        <field name="name">Book Title</field>
+        <field name="code">book_title</field>
+        <field name="backend_id" ref="book_backend"/>
+        <field name="backend_type_id" ref="book_backend_type" />
+        <field name="direction">output</field>
+        <field name="exchange_file_ext">json</field>
+    </record>
+
+    <record id="book_title_update_exchange_type" model="edi.exchange.type">
+        <field name="name">Book Title Update</field>
+        <field name="code">book_title_update</field>
+        <field name="backend_id" ref="book_backend"/>
+        <field name="backend_type_id" ref="book_backend_type" />
+        <field name="direction">input</field>
+        <field name="exchange_file_ext">json</field>
+    </record>
+</odoo>
+

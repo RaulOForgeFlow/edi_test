@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sale_backend_type" model="edi.backend.type">
+        <field name="name">Sale Backend type</field>
+        <field name="code">sale</field>
+    </record>
+
+    <record id="sale_webservice" model="webservice.backend">
+        <field name="name">Sale Webservice</field>
+        <field name="code">Sale</field>
+        <field name="protocol">sftp</field>
+        <field name="url">192.168.1.50</field>
+        <field name="username">ftpuser</field>
+        <field name="password">userftpPassword</field>
+        <field name="content_type">application/xml</field>
+    </record>
+
+    <record id="sale_backend" model="edi.backend">
+        <field name="name">Sale</field>
+        <field name="backend_type_id" ref="sale_backend_type" />
+        <field name="webservice_backend_id" ref="sale_webservice" />
+    </record>
+
+    <record id="sale_exchange_type" model="edi.exchange.type">
+        <field name="name">Sale</field>
+        <field name="code">sale</field>
+        <field name="backend_id" ref="sale_backend"/>
+        <field name="backend_type_id" ref="sale_backend_type" />
+        <field name="direction">output</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+
+    <record id="sale_update_exchange_type" model="edi.exchange.type">
+        <field name="name">Sale Update</field>
+        <field name="code">sale_update</field>
+        <field name="backend_id" ref="sale_backend"/>
+        <field name="backend_type_id" ref="sale_backend_type" />
+        <field name="direction">input</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+</odoo>
+

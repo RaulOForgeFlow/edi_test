@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_move_form" model="ir.ui.view">
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <button name="button_draft" position="before">
+                <button
+                    type="object"
+                    name="send_invoice_button"
+                    attrs="{'invisible': ['|', ('type', 'not in', ['out_invoice', 'out_refund']), ('state', '!=', 'posted')]}"
+                    string="Send Invoice"
+                />
+            </button>
+        </field>
+    </record>
+
+    <record id="update_invoice_form" model="ir.ui.view">
+        <field name="name">update.invoice.popup</field>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <form string="Receive Invoice List">
+                <footer>
+                    <button name="receive_invoice_button" string="Receive" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_invoice_popup" model="ir.actions.act_window">
+        <field name="name">Get Invoice</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="update_invoice_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Get Invoices"
+              id="update_book_popup_menu"
+              parent="account.menu_finance"
+              action="update_invoice_popup"/>
+</odoo>

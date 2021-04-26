@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="author_pga" model="res.partner">
+        <field name="name">Parth Gajjar</field>
+    </record>
+
+    <record id="author_af" model="res.partner">
+        <field name="name">Alexandre Fayolle</field>
+    </record>
+
+    <record id="author_dr" model="res.partner">
+        <field name="name">Daniel Reis</field>
+    </record>
+
+    <record id="author_hb" model="res.partner">
+        <field name="name">Holger Brunn</field>
+    </record>
+
+    <record id="book_cookbook" model="library.book">
+        <field name="name">Odoo Cookbook</field>
+        <field name="short_name">cookbook</field>
+        <field name="date_release">2016-03-01</field>
+        <field name="author_ids" eval="[(6, 0, [ref('author_af'), ref('author_dr'), ref('author_hb')])]"/>
+    </record>
+
+    <!-- X2many fields expect to be populated by a list of three tuples, where the first value of the tuple determines
+         the operation to be carried out. Within an eval attribute, we have access to a function called ref , which
+         returns the database ID of an XML ID given as a string.
+            -(2, id, False): deletes the linked record with id from teh database
+            -(3, id, False): detaches the record with id , from the one2many field.
+            -(4, id, False): adds a link to the existing record id. This should be what you use most of the time, usually
+                             accompanied by the ref function to get the database ID of a record known by its XML ID.
+            -(5, False, False): cuts all links but keeps the linked records intact
+            -(6, False, [id,...]): clears out currently referenced records to replace them with the ones mentioned in the list of IDs.
+         -->
+</odoo>
