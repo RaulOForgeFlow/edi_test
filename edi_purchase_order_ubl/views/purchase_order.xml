@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_purchase_form" model="ir.ui.view">
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <button name="button_cancel" position="before">
+                <button
+                    type="object"
+                    name="send_purchase_button"
+                    string="Send Purchase UBL"
+                />
+            </button>
+        </field>
+    </record>
+
+    <!--
+    <record id="update_sale_form" model="ir.ui.view">
+        <field name="name">update.sale.popup</field>
+        <field name="model">sale.order</field>
+        <field name="arch" type="xml">
+            <form string="Receive Sale List">
+                <footer>
+                    <button name="receive_sale_button" string="Receive" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="update_sale_popup" model="ir.actions.act_window">
+        <field name="name">Get Sale</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="update_sale_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Get Sales"
+              id="update_sale_popup_menu"
+              parent="purchase.menu_purchase_root"
+              action="update_sale_popup"/>
+    -->
+</odoo>

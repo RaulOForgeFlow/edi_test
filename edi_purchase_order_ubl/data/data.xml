@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="purchase_backend_type" model="edi.backend.type">
+        <field name="name">Purchase Backend type</field>
+        <field name="code">purchase</field>
+    </record>
+
+    <record id="purchase_webservice" model="webservice.backend">
+        <field name="name">Purchase Webservice</field>
+        <field name="code">purchase</field>
+        <field name="protocol">sftp</field>
+        <field name="url">192.168.1.50</field>
+        <field name="username">ftpuser</field>
+        <field name="password">userftpPassword</field>
+        <field name="content_type">application/xml</field>
+    </record>
+
+    <record id="purchase_backend" model="edi.backend">
+        <field name="name">Purchase</field>
+        <field name="backend_type_id" ref="purchase_backend_type" />
+        <field name="webservice_backend_id" ref="purchase_webservice" />
+    </record>
+
+    <record id="purchase_exchange_type" model="edi.exchange.type">
+        <field name="name">Purchase</field>
+        <field name="code">purchase</field>
+        <field name="backend_id" ref="purchase_backend"/>
+        <field name="backend_type_id" ref="purchase_backend_type" />
+        <field name="direction">output</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+
+    <record id="purchase_update_exchange_type" model="edi.exchange.type">
+        <field name="name">Purchase Update</field>
+        <field name="code">purchase_update</field>
+        <field name="backend_id" ref="purchase_backend"/>
+        <field name="backend_type_id" ref="purchase_backend_type" />
+        <field name="direction">input</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+</odoo>
+
