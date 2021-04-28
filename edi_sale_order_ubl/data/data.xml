@@ -7,7 +7,7 @@
 
     <record id="sale_webservice" model="webservice.backend">
         <field name="name">Sale Webservice</field>
-        <field name="code">Sale</field>
+        <field name="code">sale</field>
         <field name="protocol">sftp</field>
         <field name="url">192.168.1.50</field>
         <field name="username">ftpuser</field>

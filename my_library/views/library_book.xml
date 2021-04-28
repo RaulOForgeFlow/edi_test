@@ -33,7 +33,6 @@
                         <field name="date_release"/>
                         <field name="pages"/>
                         <button name="post_book_title" string="Send Book" type="object"/>
-                        <button name="update_book_info" string="Update Book Info" type="object"/>
                     </group>
 
                     <group>
@@ -64,35 +63,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="update_book_form" model="ir.ui.view">
-        <field name="name">update.book.popup</field>
-        <field name="model">library.book</field>
-        <field name="arch" type="xml">
-            <form string="Receive Book List">
-                <footer>
-                    <button name="get_book_info" string="Receive" type="object" class="btn-primary"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
-                </footer>
-            </form>
-        </field>
-    </record>
-
-    <record id="update_book_popup" model="ir.actions.act_window">
-        <field name="name">Get Books</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">library.book</field>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="update_book_form"/>
-        <field name="target">new</field>
-    </record>
-
     <!--Add the menu items to the library_return.xml file, making it visible to users:-->
     <menuitem name="My Library" id="library_base_menu" />
     <menuitem name="Books" id="library_book_menu"
               parent="library_base_menu"
               action="library_book_action"/>
-    <menuitem name="Get Books"
-              id="update_book_popup_menu"
-              parent="library_base_menu"
-              action="update_book_popup"/>
+
 </odoo>

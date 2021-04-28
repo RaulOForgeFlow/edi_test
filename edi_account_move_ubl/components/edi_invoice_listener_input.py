@@ -4,7 +4,7 @@
 
 from odoo.addons.component.core import Component
 
-class AccountMoveL10nEsFacturaeFACeListener(Component):
+class EdiInvoiceListenerInput(Component):
     _name = "edi.invoice.listener.input"
     _inherit = "base.event.listener"
     _apply_on = ["account.move"]

@@ -1,61 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_base_module_update" model="ir.ui.view">
-        <field name="name">Module Update</field>
-        <field name="model">base.module.update</field>
-        <field name="arch" type="xml">
-            <form string="Update Module List">
-                <field name="state" invisible="1"/>
-                <separator string="Module Update Result"/>
-                <group states="init">
-                    <span class="o_form_label">Click on Update below to start the process...</span>
-                </group>
-                <group states="done" >
-                    <field name="updated"/>
-                    <field name="added" />
-                </group>
-                <footer>
-                    <div states="init">
-                        <button name="update_module" string="Update" type="object" class="btn-primary"/>
-                        <button special="cancel" string="Cancel" class="btn-secondary"/>
-                    </div>
-                    <div states="done">
-                        <button name="action_module_open" string="Open Apps" type="object" class="btn-primary"/>
-                        <button special="cancel" string="Close" class="btn-secondary"/>
-                    </div>
-                </footer>
-            </form>
-        </field>
-    </record>
 
-    <record id="action_view_base_module_update" model="ir.actions.act_window">
-        <field name="name">Module Update</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">base.module.update</field>
-        <field name="view_mode">form</field>
-        <field name="target">new</field>
-    </record>
-
-    <menuitem
-        name="Update Apps List"
-        action="action_view_base_module_update"
-        id="menu_view_base_module_update"
-        groups="base.group_no_one"
-        parent="menu_management"
-        sequence="40"
-        icon="fa-exchange"/>
-
-
-
-        <!--Add the action that opens the views in the library_return.xml file:-->
-    <record id='library_book_action' model='ir.actions.act_window'>
-        <field name="name">Library Books</field>
-        <field name="res_model">library.book</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <record id="update_book_form" model="ir.ui.view">
-        <field name="name">update.book.popup</field>
+    <record id="receive_book_form" model="ir.ui.view">
+        <field name="name">receive.book.form</field>
         <field name="model">library.book</field>
         <field name="arch" type="xml">
             <form string="Receive Book List">
@@ -67,20 +14,17 @@
         </field>
     </record>
 
-    <record id="update_book_popup" model="ir.actions.act_window">
+    <record id="action_show_receive_books" model="ir.actions.act_window">
         <field name="name">Get Books</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">library.book</field>
+        <field name="res_model">library.book.wizard</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="update_book_form"/>
+        <field name="view_id" ref="receive_book_form"/>
         <field name="target">new</field>
     </record>
 
-
     <menuitem name="Get Books"
-              action="update_book_popup"
-              id="update_book_popup_menu"
+              action="action_show_receive_books"
+              id="receive_book_menu"
               parent="library_base_menu"/>
-
-
 </odoo>

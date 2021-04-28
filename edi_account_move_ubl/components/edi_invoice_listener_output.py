@@ -1,7 +1,7 @@
 from odoo.addons.component.core import Component
 
 
-class EdiBookListener(Component):
+class EdiInvoiceListenerOutput(Component):
     _name = "edi.invoice.listener.output"
     _inherit = "base.event.listener"
     _apply_on = "account.move"

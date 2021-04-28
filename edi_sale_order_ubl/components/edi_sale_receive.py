@@ -4,9 +4,9 @@
 
 from odoo.addons.component.core import Component
 
-class EdiWebServiceReceiveFaceL10nEsFacturaeFaceUpdate(Component):
+class EdiSaleReceive(Component):
     _name = "edi.webservice.receive.sale"
-    _usage = "webservice.sale"
+    _usage = "webservice.receive"
     _backend_type = "sale"
     _exchange_type = "sale_update"
     _webservice_protocol = "http"

@@ -2,8 +2,8 @@
 <Quotation xmlns="urn:oasis:names:specification:ubl:schema:xsd:Quotation-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
   <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
   <cbc:ID>S00003</cbc:ID>
-  <cbc:IssueDate>2021-04-26</cbc:IssueDate>
-  <cbc:IssueTime>12:11:44</cbc:IssueTime>
+  <cbc:IssueDate>2021-04-27</cbc:IssueDate>
+  <cbc:IssueTime>07:57:30</cbc:IssueTime>
   <cbc:PricingCurrencyCode>USD</cbc:PricingCurrencyCode>
   <cac:SellerSupplierParty>
     <cac:Party>

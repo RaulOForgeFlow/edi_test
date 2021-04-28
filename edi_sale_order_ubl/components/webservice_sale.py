@@ -6,7 +6,7 @@ from odoo.addons.component.core import Component
 import requests, ftplib, os
 from lxml import etree
 
-class WebserviceBook(Component):
+class WebserviceSale(Component):
     _name = "base.webservice.sale"
     _usage = "webservice.request"
     _webservice_protocol = "http"

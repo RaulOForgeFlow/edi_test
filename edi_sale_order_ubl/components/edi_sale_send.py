@@ -4,7 +4,7 @@
 
 from odoo.addons.component.core import Component
 
-class EdiBookSend(Component):
+class EdiSaleSend(Component):
     _name = "edi.output.send.sale"
     _usage = "webservice.send"
     _backend_type = "sale"

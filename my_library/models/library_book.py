@@ -22,19 +22,6 @@ class LibraryBook(models.Model):
     def post_book_title(self):
         self._event("on_post_book_title").notify(self)
 
-    def get_book_info(self):
-        files_FTP = count_files()
-        num_files = len(files_FTP)
-
-        if num_files == 0:
-            raise UserError("There are no files to receive in the FTP server. Please upload first at least one")
-        else:
-            self._event("on_get_book_title").notify(self)
-
-    def update_book_info(self):
-        self._event("on_get_book_title").notify(self)
-
     def generate_book_data(self):
         file = genJSON(self)
         return file
-

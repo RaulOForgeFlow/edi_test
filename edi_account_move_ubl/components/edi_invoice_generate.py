@@ -1,6 +1,6 @@
 from odoo.addons.component.core import Component
 
-class EdiBookGenerate(Component):
+class EdiInvoiceGenerate(Component):
     _name = "edi.output.generate.invoice"
     _inherit = "edi.component.output.mixin"
     _description = "Generates the book in edi format"

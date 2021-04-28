@@ -5,11 +5,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class EdiBookProcess(Component):
-    _name = "edi.input.process.book"
+class EdiSaleProcess(Component):
+    _name = "edi.input.process.sale"
     _usage = "input.process"
-    _backend_type = "book"
-    _exchange_type = "book_title_update"
+    _backend_type = "sale"
+    _exchange_type = "sale_update"
     _inherit = "edi.component.input.mixin"
 
     def process(self):

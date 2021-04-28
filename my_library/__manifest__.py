@@ -11,6 +11,7 @@
         'views/library_book.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
+        'wizards/library_book_wizard.xml',
     ],
     'demo':['data/demo.xml'],
     "qweb": ["static/src/xml/widget_edi.xml"],

@@ -1,6 +1,6 @@
 from odoo.addons.component.core import Component
 
-class EdiBookListener(Component):
+class EdiBookListenerOutput(Component):
     _name = "edi.book.listener.output"
     _inherit = "base.event.listener"
     _apply_on = "library.book"

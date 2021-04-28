@@ -45,23 +45,15 @@ class WebserviceBook(Component):
         # Delete the temporary file
         os.remove(localfilepath+file_name)
 
-    def getFTP(self, url, user, password, is_new_record, short_name):
+    def getFTP(self, url, user, password):
         session = ftplib.FTP(url, user, password)
         localfilepath = '/home/ferran/odoo-dev13/edi_test/my_library/temp_files/'
 
         # Change server directory
         session.cwd('/home/ftpuser/uploads')
-        # If the record is new, sort the files by date and get the oldest one in the SFTP server
-        if(is_new_record == True):
-            file_name = sorted(session.nlst(), key=lambda x: session.voidcmd(f"MDTM {x}"))[0]
-        # Else get the file containing the short_name of the corresponding record
-        else:
-            ftp_files_list = session.nlst()
-            for name in ftp_files_list:
-                if short_name in name:
-                    file_name = name
+        # Sort the files by date and get the oldest one in the SFTP server
+        file_name = sorted(session.nlst(), key=lambda x: session.voidcmd(f"MDTM {x}"))[0]
 
-        # Get the file
         session.retrbinary("RETR " + file_name, open(localfilepath+file_name, 'wb').write)
         # Delete the file since it has been downloaded
         session.delete(file_name)
