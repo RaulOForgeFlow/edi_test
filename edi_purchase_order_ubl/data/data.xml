@@ -8,7 +8,7 @@
     <record id="purchase_webservice" model="webservice.backend">
         <field name="name">Purchase Webservice</field>
         <field name="code">purchase</field>
-        <field name="protocol">sftp</field>
+        <field name="protocol">sftpPurchase</field>
         <field name="url">192.168.1.50</field>
         <field name="username">ftpuser</field>
         <field name="password">userftpPassword</field>

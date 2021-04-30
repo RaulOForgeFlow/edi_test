@@ -7,7 +7,7 @@ from odoo.addons.component.core import Component
 class EdiSaleListenerInput(Component):
     _name = "edi.sale.listener.input"
     _inherit = "base.event.listener"
-    _apply_on = ["sale.order"]
+    _apply_on = ["sale.order", "sale.order.wizard"]
 
     def _get_sale_backend(self, record):
         return record.env.ref("edi_sale_order_ubl.sale_backend")
@@ -29,5 +29,5 @@ class EdiSaleListenerInput(Component):
             exchange_record.write(
                 {"edi_exchange_state": "input_pending"})
         exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_receive(exchange_record)
-        #exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_process(exchange_record)
+        exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_process(exchange_record)
 

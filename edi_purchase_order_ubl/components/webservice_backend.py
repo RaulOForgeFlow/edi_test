@@ -8,4 +8,4 @@ class WebServiceBackend(models.Model):
 
     _inherit = "webservice.backend"
 
-    protocol = fields.Selection(selection_add=[("sftp", "SFTP")])
+    protocol = fields.Selection(selection_add=[("sftpPurchase", "SFTP Purchase Order")])

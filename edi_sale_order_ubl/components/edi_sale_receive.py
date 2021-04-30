@@ -14,10 +14,10 @@ class EdiSaleReceive(Component):
 
     def receive(self):
 
-        book_response = self.backend.webservice_backend_id.call(
+        sale_response = self.backend.webservice_backend_id.call(
             "getFTP",
             self.exchange_record.backend_id.webservice_backend_id.url,
             self.exchange_record.backend_id.webservice_backend_id.username,
             self.exchange_record.backend_id.webservice_backend_id.password,
         )
-        return book_response
+        return sale_response

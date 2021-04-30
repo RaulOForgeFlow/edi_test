@@ -58,4 +58,3 @@ class EdiBookProcess(Component):
             self.exchange_record.write({
                 'model': 'library.book',
                 'res_id': lib_book_rec.id})
-            print('Hello')

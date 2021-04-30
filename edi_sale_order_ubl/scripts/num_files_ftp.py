@@ -7,6 +7,7 @@ def count_files(directory):
     return files
 
 
+
 if(__name__ == "__main__"):
     num_files = count_files()
     print (num_files)

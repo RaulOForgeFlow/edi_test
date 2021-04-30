@@ -3,43 +3,25 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.addons.component.core import Component
-import requests, ftplib, os
-from lxml import etree
+import ftplib, os
 
 class WebserviceSale(Component):
+
     _name = "base.webservice.sale"
-    _usage = "webservice.request"
-    _webservice_protocol = "http"
-
-    def postHTTP(self, url, file_data, file_name):
-
-        test_response = requests.post(url + 'post.php', files={"upfile":file_data}, data={"filename":'title.json'})
-        if test_response.ok:
-            print("Upload completed successfully!")
-            print(test_response.text)
-        else:
-            print("Something went wrong!")
-
-    def getHTTP(self, url):
-        test_response = requests.get(url)
-        if test_response.ok:
-            print("Download completed successfully!")
-        else:
-            print("Something went wrong!")
-        return test_response
-
+    _inherit = "base.webservice.adapter"
+    _webservice_protocol = "sftpSale"
 
     def uploadFTP(self, url, user, password, file_name):
         session = ftplib.FTP(url, user, password)
 
         localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml'
 
-        session.cwd('/home/ftpuser/uploads')
+        session.cwd('/home/ftpuser/sales')
         session.storbinary('STOR temp.xml', open(localfilepath, 'rb'))
         session.quit()
 
         # Delete the temporary file
-        #os.remove(localfilepath)
+        os.remove(localfilepath)
 
 
     def getFTP(self, url, user, password):
@@ -47,7 +29,7 @@ class WebserviceSale(Component):
         localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml'
 
         # Change server directory
-        session.cwd('/home/ftpuser/uploads')
+        session.cwd('/home/ftpuser/purchases')
 
         # Get the file
         session.retrbinary("RETR temp.xml", open(localfilepath, 'wb').write)
@@ -56,6 +38,5 @@ class WebserviceSale(Component):
 
         xml_string = open(localfilepath).read()
         xml_bytes = xml_string.encode(encoding="UTF-8")
-        os.remove(localfilepath)
         session.quit()
         return xml_bytes

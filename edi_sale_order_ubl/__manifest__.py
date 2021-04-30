@@ -5,7 +5,7 @@
     'name': "EDI Sales Order UBL",
     'summary': "EDI Exchange with UBL format",
     'version':'13.0.0.0.0',
-    'depends': ['base','edi','edi_webservice', 'sale_order_ubl'],
-    'data': ['data/data.xml', 'views/sale_order.xml'],
+    'depends': ['base','edi','edi_webservice', 'sale_order_ubl', 'sale_order_import_ubl'],
+    'data': ['data/data.xml', 'views/sale_order.xml', 'wizards/sale_order_wizard.xml'],
     'demo':[],
 }

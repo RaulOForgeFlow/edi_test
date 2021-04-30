@@ -7,8 +7,11 @@ class LibraryBookWizard(models.TransientModel):
     _description = "Wizard for Library Books"
     _inherit = ["library.book", "edi.exchange.consumer.mixin"]
 
+    name = fields.Char("Title", required=False)
+    short_name = fields.Char('Short Title', required=False)
+
     def get_book_info(self):
-        files_FTP = count_files()
+        files_FTP = count_files('my_library')
         num_files = len(files_FTP)
 
         if num_files == 0:

@@ -8,7 +8,7 @@
     <record id="invoice_webservice" model="webservice.backend">
         <field name="name">Invoice Webservice</field>
         <field name="code">invoice_webservice</field>
-        <field name="protocol">sftp</field>
+        <field name="protocol">sftpInvoice</field>
         <field name="url">192.168.1.50</field>
         <field name="username">ftpuser</field>
         <field name="password">userftpPassword</field>

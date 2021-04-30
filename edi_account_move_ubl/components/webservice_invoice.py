@@ -3,31 +3,12 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo.addons.component.core import Component
-import requests, ftplib, os
-from lxml import etree
+import ftplib, os
 
 class WebserviceInvoice(Component):
     _name = "base.webservice.invoice"
     _usage = "webservice.request"
-    _webservice_protocol = "http"
-
-    def postHTTP(self, url, file_data, file_name):
-
-        test_response = requests.post(url + 'post.php', files={"upfile":file_data}, data={"filename":'title.json'})
-        if test_response.ok:
-            print("Upload completed successfully!")
-            print(test_response.text)
-        else:
-            print("Something went wrong!")
-
-    def getHTTP(self, url):
-        test_response = requests.get(url)
-        if test_response.ok:
-            print("Download completed successfully!")
-        else:
-            print("Something went wrong!")
-        return test_response
-
+    _webservice_protocol = "sftpInvoice"
 
     def uploadFTP(self, url, user, password, file_name):
         session = ftplib.FTP(url, user, password)

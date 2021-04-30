@@ -1,17 +1,15 @@
 from odoo import models, fields, api
 from ..scripts.gen_json import genJSON
-from ..scripts.num_files_ftp import count_files
-from odoo.exceptions import UserError
 
 class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Library to manage books'
     _inherit = "edi.exchange.consumer.mixin"
 
-    name = fields.Char("Title", requiered=True)
+    name = fields.Char("Title", required=True)
     date_release = fields.Date("Release Date")
     cost_price = fields.Float("Book Cost", digits='Book Price')
-    short_name = fields.Char('Short Title', requiered=True)
+    short_name = fields.Char('Short Title', required=True)
     author_ids = fields.Many2many('res.partner', string="Authors")
     description = fields.Html('Description')
     cover = fields.Binary('Book Cover')
