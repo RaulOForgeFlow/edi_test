@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="product_backend_type" model="edi.backend.type">
+        <field name="name">Product Backend type</field>
+        <field name="code">product</field>
+    </record>
+
+    <record id="product_webservice" model="webservice.backend">
+        <field name="name">Product Webservice</field>
+        <field name="code">product</field>
+        <field name="protocol">sftpProduct</field>
+        <field name="url">192.168.1.50</field>
+        <field name="username">ftpuser</field>
+        <field name="password">userftpPassword</field>
+        <field name="content_type">application/xml</field>
+    </record>
+
+    <record id="product_backend" model="edi.backend">
+        <field name="name">Product</field>
+        <field name="backend_type_id" ref="product_backend_type" />
+        <field name="webservice_backend_id" ref="product_webservice" />
+    </record>
+
+    <record id="product_exchange_type" model="edi.exchange.type">
+        <field name="name">Product</field>
+        <field name="code">product</field>
+        <field name="backend_id" ref="product_backend"/>
+        <field name="backend_type_id" ref="product_backend_type" />
+        <field name="direction">output</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+
+    <record id="product_update_exchange_type" model="edi.exchange.type">
+        <field name="name">Product Update</field>
+        <field name="code">product_update</field>
+        <field name="backend_id" ref="product_backend"/>
+        <field name="backend_type_id" ref="product_backend_type" />
+        <field name="direction">input</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+</odoo>
+

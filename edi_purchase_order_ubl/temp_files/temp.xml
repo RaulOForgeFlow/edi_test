@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Order xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:ID>P00008</cbc:ID>
+  <cbc:IssueDate>2021-04-24</cbc:IssueDate>
+  <cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cbc:WebsiteURI>http://www.example.com</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>My Company (San Francisco)</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+        <cbc:CityName>San Francisco</cbc:CityName>
+        <cbc:PostalZone>94134</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>My Company (San Francisco)</cbc:RegistrationName>
+        <cac:RegistrationAddress>
+          <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+          <cbc:CityName>San Francisco</cbc:CityName>
+          <cbc:PostalZone>94134</cbc:PostalZone>
+          <cbc:CountrySubentity>California</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+          <cac:Country>
+            <cbc:IdentificationCode>US</cbc:IdentificationCode>
+            <cbc:Name>United States</cbc:Name>
+          </cac:Country>
+        </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Telephone>+1 (650) 691-3277 </cbc:Telephone>
+        <cbc:ElectronicMail>info@yourcompany.example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cbc:WebsiteURI>http://www.wood-corner.com</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>Wood Corner</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>1839 Arbor Way</cbc:StreetName>
+        <cbc:CityName>Turlock</cbc:CityName>
+        <cbc:PostalZone>95380</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Telephone>(623)-853-7197</cbc:Telephone>
+        <cbc:ElectronicMail>wood.corner26@example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Delivery>
+    <cac:DeliveryLocation>
+      <cac:Address>
+        <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+        <cbc:CityName>San Francisco</cbc:CityName>
+        <cbc:PostalZone>94134</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+    <cac:DeliveryParty>
+      <cbc:WebsiteURI>http://www.example.com</cbc:WebsiteURI>
+      <cac:PartyName>
+        <cbc:Name>My Company (San Francisco)</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:Name>English (US)</cbc:Name>
+        <cbc:LocaleCode>en_US</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:StreetName>250 Executive Park Blvd, Suite 3400</cbc:StreetName>
+        <cbc:CityName>San Francisco</cbc:CityName>
+        <cbc:PostalZone>94134</cbc:PostalZone>
+        <cbc:CountrySubentity>California</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode>CA</cbc:CountrySubentityCode>
+        <cac:Country>
+          <cbc:IdentificationCode>US</cbc:IdentificationCode>
+          <cbc:Name>United States</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Telephone>+1 (650) 691-3277 </cbc:Telephone>
+        <cbc:ElectronicMail>info@yourcompany.example.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:DeliveryParty>
+  </cac:Delivery>
+  <cac:AnticipatedMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="USD">6465.5</cbc:LineExtensionAmount>
+    <cbc:PayableAmount currencyID="USD">6465.5</cbc:PayableAmount>
+  </cac:AnticipatedMonetaryTotal>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>17</cbc:ID>
+      <cbc:Quantity unitCode="DPC">15.0</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="USD">4212.0</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="USD">280.8</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="DPC">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Drawer Black</cbc:Description>
+        <cbc:Name>Drawer Black</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>FURN_8900</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+  <cac:OrderLine>
+    <cac:LineItem>
+      <cbc:ID>18</cbc:ID>
+      <cbc:Quantity unitCode="DPC">5.0</cbc:Quantity>
+      <cbc:LineExtensionAmount currencyID="USD">2253.5</cbc:LineExtensionAmount>
+      <cac:Price>
+        <cbc:PriceAmount currencyID="USD">450.7</cbc:PriceAmount>
+        <cbc:BaseQuantity unitCode="DPC">1</cbc:BaseQuantity>
+      </cac:Price>
+      <cac:Item>
+        <cbc:Description>Flipover</cbc:Description>
+        <cbc:Name>Flipover</cbc:Name>
+        <cac:SellersItemIdentification>
+          <cbc:ID>FURN_9001</cbc:ID>
+        </cac:SellersItemIdentification>
+      </cac:Item>
+    </cac:LineItem>
+  </cac:OrderLine>
+</Order>

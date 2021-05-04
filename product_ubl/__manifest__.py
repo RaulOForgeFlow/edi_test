@@ -2,13 +2,12 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Product Catalog UBL",
+    "name": "Products UBL",
     "version": "13.0.1.0.0",
-    "category": "Product",
+    "category": "Products",
     "license": "AGPL-3",
-    "summary": "Generate UBL XML file of a product catalog",
-    "author": "Ferran Coll,Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/edi/",
+    "summary": "Generate Product Catalogue UBL XML",
+    "author": "Ferran Coll, Odoo Community Association (OCA)",
     "depends": ["product", "base_ubl"],
     "data": [],
     "installable": True,
