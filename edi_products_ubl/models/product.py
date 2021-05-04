@@ -18,11 +18,11 @@ class Product(models.Model):
 
     def generate_product_data(self):
         xml_root = self.generate_product_ubl_xml_etree()
-        xml_bytes = etree.tostring(xml_root)
+        xml_bytes = etree.tostring(xml_root, pretty_print=True, encoding="UTF-8", xml_declaration=True)
+        xml_str = xml_bytes.decode(encoding="UTF-8")
 
-
-        file = open('/home/ferran/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml', 'wb')
-        file.write(xml_bytes)
+        file = open('/home/ferran/odoo-dev13/edi_test/edi_products_ubl/temp_files/temp.xml', 'w')
+        file.write(xml_str)
         file.close()
 
         return xml_bytes

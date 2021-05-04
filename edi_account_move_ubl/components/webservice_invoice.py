@@ -15,7 +15,7 @@ class WebserviceInvoice(Component):
 
         localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_account_move_ubl/temp_files/temp.xml'
 
-        session.cwd('/home/ftpuser/uploads')
+        session.cwd('/home/ftpuser/invoices')
         session.storbinary('STOR temp.xml', open(localfilepath, 'rb'))
         session.quit()
 
@@ -28,7 +28,7 @@ class WebserviceInvoice(Component):
         localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_account_move_ubl/temp_files/temp.xml'
 
         # Change server directory
-        session.cwd('/home/ftpuser/uploads')
+        session.cwd('/home/ftpuser/invoices')
 
         # Get the file
         session.retrbinary("RETR temp.xml", open(localfilepath, 'wb').write)

@@ -5,7 +5,7 @@
     'name': "My Library",
     'summary': "Manage books easily",
     'version':'13.0.0.0.0',
-    'depends': ['base','edi','edi_webservice'],
+    'depends': ['base','edi','edi_webservice','webservice'],
     'data': [
         'data/data.xml',
         'views/library_book.xml',
