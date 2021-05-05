@@ -22,7 +22,8 @@ class EdiProductProcess(Component):
         #data = self.env['sale.order.import'].import_order_button()
         #print(type(data))
 
-        localfilepath = "/home/ferran/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml"
+        #localfilepath = "/home/ferran/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml"
+        localfilepath = "/home/local-odoo/raul/odoo-dev13/edi_test/edi_sale_order_ubl/temp_files/temp.xml"
         f = file_open(localfilepath, "rb")
         xml_file = f.read()
         wiz = self.env["sale.order.import"].create({"order_file": base64.b64encode(xml_file), "order_filename": 'temp.xml'})

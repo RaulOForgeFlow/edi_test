@@ -14,7 +14,8 @@ class WebserviceProduct(Component):
     def uploadFTP(self, url, user, password, file_name):
         session = ftplib.FTP(url, user, password)
 
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
+        #localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
+        localfilepath = '/home/local-odoo/raul/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
 
         session.cwd('/home/ftpuser/products')
         session.storbinary('STOR temp.xml', open(localfilepath, 'rb'))
@@ -26,7 +27,9 @@ class WebserviceProduct(Component):
 
     def getFTP(self, url, user, password):
         session = ftplib.FTP(url, user, password)
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
+
+        #localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
+        localfilepath = '/home/local-odoo/raul/odoo-dev13/edi_test/edi_product_order_ubl/temp_files/temp.xml'
 
         # Change server directory
         session.cwd('/home/ftpuser/products')
