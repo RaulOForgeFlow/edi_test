@@ -10,15 +10,13 @@ logger = logging.getLogger(__name__)
 
 
 class Product(models.Model):
-    _name = "product.template"
-    _inherit = ["product.template", "base.ubl"]
+    _name = "product.pricelist"
+    _inherit = ["product.pricelist", "base.ubl"]
 
-    def _ubl_add_item(self, name, product, parent_node, ns, version = "2.1"):
+    def _ubl_add_item(self, name, parent_node, ns, version="2.1"):
         item = etree.SubElement(parent_node, ns["cac"] + "Item")
         description = etree.SubElement(item, ns["cbc"] + "Description")
         description.text = name
-        name_node = etree.SubElement(item, ns["cbc"] + "Name")
-        name_node.text = name.split("\n")[0]
 
     @api.model
     def _ubl_add_provider_party(self, company, parent_node, ns, version="2.1"):
@@ -47,11 +45,11 @@ class Product(models.Model):
         issue_date = etree.SubElement(parent_node, ns["cbc"] + "IssueDate")
         issue_date.text = date
 
-    def _ubl_add_catalogue_line(self, parent_node, ns):
+    def _ubl_add_catalogue_line(self, product, parent_node, ns):
         line_root = etree.SubElement(parent_node, ns["cac"] + "CatalogueLine")
         catalogue_id = etree.SubElement(line_root, ns["cbc"] + "ID")
-        catalogue_id.text = str(self.id)
-        self._ubl_add_item(self.name, self.id, line_root, ns)
+        catalogue_id.text = str(product.product_tmpl_id)
+        self._ubl_add_item(product.name, line_root, ns)
 
 
     def generate_product_ubl_xml_etree(self, version="2.1"):
@@ -62,7 +60,9 @@ class Product(models.Model):
         self._ubl_add_provider_party(self.env.user.company_id, xml_root, ns)
         self._ubl_add_receiver_party(self.env.user.company_id, xml_root, ns)
 
-        self._ubl_add_catalogue_line(xml_root, ns)
+        pricelist_products = self.env['product.pricelist.item'].search([('pricelist_id','=',self.id)])
+        for product in pricelist_products:
+            self._ubl_add_catalogue_line(product, xml_root, ns)
 
         return xml_root
 

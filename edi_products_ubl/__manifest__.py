@@ -10,5 +10,5 @@
     "author": "Ferran Coll, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/edi/",
     'depends': ['base','edi','edi_webservice', 'product_ubl'],
-    #"data": ["views/product.xml", "data/data.xml"],
+    "data": ["views/product.xml", "data/data.xml"],
 }

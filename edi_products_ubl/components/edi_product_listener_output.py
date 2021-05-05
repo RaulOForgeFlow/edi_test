@@ -4,7 +4,7 @@ from odoo.addons.component.core import Component
 class EdiProductListenerOutput(Component):
     _name = "edi.product.listener.output"
     _inherit = "base.event.listener"
-    _apply_on = "product.template"
+    _apply_on = "product.pricelist"
 
     def _get_product_backend(self, record):
         return record.env.ref("edi_products_ubl.product_backend")
