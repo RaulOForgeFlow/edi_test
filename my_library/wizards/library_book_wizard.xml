@@ -27,4 +27,31 @@
               action="action_show_receive_books"
               id="receive_book_menu"
               parent="library_base_menu"/>
+
+        <record id="send_book_form" model="ir.ui.view">
+        <field name="name">send.book.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form string="Send Book List">
+                <footer>
+                    <button name="post_book_title" string="Send" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_show_send_books" model="ir.actions.act_window">
+        <field name="name">Send Books</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.book.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="send_book_form"/>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem name="Send Books"
+              action="action_show_send_books"
+              id="send_book_menu"
+              parent="library_base_menu"/>
 </odoo>

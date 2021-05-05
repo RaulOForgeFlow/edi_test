@@ -13,8 +13,6 @@ class Product(models.Model):
     _name = "product.template"
     _inherit = ["product.template", "base.ubl"]
 
-
-
     def _ubl_add_item(self, name, product, parent_node, ns, version = "2.1"):
         item = etree.SubElement(parent_node, ns["cac"] + "Item")
         description = etree.SubElement(item, ns["cbc"] + "Description")

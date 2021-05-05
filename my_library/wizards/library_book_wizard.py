@@ -20,3 +20,8 @@ class LibraryBookWizard(models.TransientModel):
             # Update and receive all the books at once
             for rep in range(num_files):
                 self._event("on_get_book_title").notify(self)
+
+    def post_book_title(self):
+        lib_books = self.env['library.book'].search([])
+        for record in lib_books:
+            self._event("on_post_book_title").notify(record)

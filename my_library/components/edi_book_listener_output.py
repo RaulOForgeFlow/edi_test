@@ -3,7 +3,7 @@ from odoo.addons.component.core import Component
 class EdiBookListenerOutput(Component):
     _name = "edi.book.listener.output"
     _inherit = "base.event.listener"
-    _apply_on = "library.book"
+    _apply_on = ["library.book", "library.book.wizard"]
 
     def _get_book_backend(self, record):
         return record.env.ref("my_library.book_backend")

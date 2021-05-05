@@ -17,9 +17,6 @@ class LibraryBook(models.Model):
     pages = fields.Integer('Number of Pages')
 
 
-    def post_book_title(self):
-        self._event("on_post_book_title").notify(self)
-
     def generate_book_data(self):
         file = genJSON(self)
         return file
