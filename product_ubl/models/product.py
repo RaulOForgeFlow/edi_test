@@ -13,11 +13,14 @@ class Product(models.Model):
     _name = "product.pricelist"
     _inherit = ["product.pricelist", "base.ubl"]
 
-    def _ubl_add_item(self, name, parent_node, ns, version="2.1"):
+    def _ubl_add_item(self, product, parent_node, ns, version="2.1"):
         item = etree.SubElement(parent_node, ns["cac"] + "Item")
         description = etree.SubElement(item, ns["cbc"] + "Description")
-        description.text = name
-
+        description.text = product.product_tmpl_id.name
+        #price = etree.SubElement(item, ns["cbc"] + "Price")
+        #price.text = str(product.product_tmpl_id.list_price)
+        # The following fields can be accessed via the product.product_tmpl_id
+        # cost_currency_id, default_code(E-COM11), id, image_1920(bytes type), name, list_price ...
     @api.model
     def _ubl_add_provider_party(self, company, parent_node, ns, version="2.1"):
         provider_party_root = etree.SubElement(parent_node, ns["cac"] + 'ProviderParty')
@@ -45,11 +48,20 @@ class Product(models.Model):
         issue_date = etree.SubElement(parent_node, ns["cbc"] + "IssueDate")
         issue_date.text = date
 
+    def _ubl_add_itemProperty(self, product, parent_node, ns):
+        item = etree.SubElement(parent_node, ns["cac"] + "ItemProperty")
+        valueQuantity = etree.SubElement(item, ns["cbc"] + "ValueQuantity")
+        valueQuantity.text = str(product.product_tmpl_id.list_price)
+        valueQualifier = etree.SubElement(item, ns["cbc"] + "ValueQualifier")
+        valueQualifier.text = product.product_tmpl_id.cost_currency_id.name
+
+
     def _ubl_add_catalogue_line(self, product, parent_node, ns):
         line_root = etree.SubElement(parent_node, ns["cac"] + "CatalogueLine")
         catalogue_id = etree.SubElement(line_root, ns["cbc"] + "ID")
-        catalogue_id.text = str(product.product_tmpl_id)
-        self._ubl_add_item(product.name, line_root, ns)
+        catalogue_id.text = str(product.product_tmpl_id.id)
+        self._ubl_add_item(product, line_root, ns)
+        self._ubl_add_itemProperty(product, line_root, ns)
 
 
     def generate_product_ubl_xml_etree(self, version="2.1"):
@@ -60,6 +72,7 @@ class Product(models.Model):
         self._ubl_add_provider_party(self.env.user.company_id, xml_root, ns)
         self._ubl_add_receiver_party(self.env.user.company_id, xml_root, ns)
 
+        # Loop on the products in the pricelist
         pricelist_products = self.env['product.pricelist.item'].search([('pricelist_id','=',self.id)])
         for product in pricelist_products:
             self._ubl_add_catalogue_line(product, xml_root, ns)

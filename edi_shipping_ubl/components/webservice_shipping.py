@@ -5,19 +5,19 @@
 from odoo.addons.component.core import Component
 import ftplib, os
 
-class WebserviceProduct(Component):
+class WebserviceShipping(Component):
 
-    _name = "base.webservice.product"
+    _name = "base.webservice.shipping"
     _inherit = "base.webservice.adapter"
-    _webservice_protocol = "sftpProduct"
+    _webservice_protocol = "sftpShipping"
 
     def uploadFTP(self, url, user, password, file_name):
         session = ftplib.FTP(url, user, password)
 
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_products_ubl/temp_files/temp.xml'
-        #localfilepath = '/home/raul/local-odoo/odoo-dev13/edi_test/edi_products_ubl/temp_files/temp.xml'
+        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_shipping_ubl/temp_files/temp.xml'
+        #localfilepath = '/home/raul/local-odoo/odoo-dev13/edi_test/edi_shipping_ubl/temp_files/temp.xml'
 
-        session.cwd('/home/ftpuser/products')
+        session.cwd('/home/ftpuser/shipping')
         session.storbinary('STOR temp.xml', open(localfilepath, 'rb'))
         session.quit()
 
@@ -27,11 +27,11 @@ class WebserviceProduct(Component):
 
     def getFTP(self, url, user, password):
         session = ftplib.FTP(url, user, password)
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_products_ubl/temp_files/temp.xml'
-        #localfilepath = '/home/raul/local-odoo/odoo-dev13/edi_test/edi_products_ubl/temp_files/temp.xml'
+        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_shipping_ubl/temp_files/temp.xml'
+        #localfilepath = '/home/raul/local-odoo/odoo-dev13/edi_test/edi_shipping_ubl/temp_files/temp.xml'
 
         # Change server directory
-        session.cwd('/home/ftpuser/products')
+        session.cwd('/home/ftpuser/shipping')
 
         # Get the file
         session.retrbinary("RETR temp.xml", open(localfilepath, 'wb').write)

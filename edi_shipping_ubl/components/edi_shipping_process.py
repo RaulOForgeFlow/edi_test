@@ -4,11 +4,11 @@ import base64, os, logging
 
 logger = logging.getLogger(__name__)
 
-class EdiProductProcess(Component):
-    _name = "edi.input.process.product"
+class EdiShippingProcess(Component):
+    _name = "edi.input.process.shipping"
     _usage = "input.process"
-    _backend_type = "product"
-    _exchange_type = "product_update"
+    _backend_type = "shipping"
+    _exchange_type = "shipping_update"
     _inherit = ["edi.component.input.mixin"]
 
     def process(self):

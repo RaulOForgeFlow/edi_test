@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="shipping_backend_type" model="edi.backend.type">
+        <field name="name">Shipping Backend type</field>
+        <field name="code">shipping</field>
+    </record>
+
+    <record id="shipping_webservice" model="webservice.backend">
+        <field name="name">Shipping Webservice</field>
+        <field name="code">shipping</field>
+        <field name="protocol">sftpShipping</field>
+        <field name="url">192.168.1.50</field>
+        <field name="username">ftpuser</field>
+        <field name="password">userftpPassword</field>
+        <field name="content_type">application/xml</field>
+    </record>
+
+    <record id="shipping_backend" model="edi.backend">
+        <field name="name">Shipping</field>
+        <field name="backend_type_id" ref="shipping_backend_type" />
+        <field name="webservice_backend_id" ref="shipping_webservice" />
+    </record>
+
+    <record id="shipping_exchange_type" model="edi.exchange.type">
+        <field name="name">Shipping</field>
+        <field name="code">shipping</field>
+        <field name="backend_id" ref="shipping_backend"/>
+        <field name="backend_type_id" ref="shipping_backend_type" />
+        <field name="direction">output</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+
+    <record id="shipping_update_exchange_type" model="edi.exchange.type">
+        <field name="name">Shipping Update</field>
+        <field name="code">shipping_update</field>
+        <field name="backend_id" ref="shipping_backend"/>
+        <field name="backend_type_id" ref="shipping_backend_type" />
+        <field name="direction">input</field>
+        <field name="exchange_file_ext">xml</field>
+    </record>
+</odoo>
+
