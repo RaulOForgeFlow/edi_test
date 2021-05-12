@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<PackingList xmlns="urn:oasis:names:specification:ubl:schema:xsd:PackingList-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:ID>36</cbc:ID>
+  <cbc:IssueDate>2021-05-10</cbc:IssueDate>
+  <cbc:Name>WH/OUT/00019</cbc:Name>
+  <cac:Shipment>
+    <cbc:ID>36</cbc:ID>
+    <cbc:NetWeightMesure>0.01</cbc:NetWeightMesure>
+    <cac:Item>
+      <cbc:ID>17</cbc:ID>
+      <cbc:Name>Office Chair Black</cbc:Name>
+    </cac:Item>
+    <cbc:ActualDeliveryDate>2021-05-10 08:01:14</cbc:ActualDeliveryDate>
+    <cac:DeliveryAddress>
+      <cac:AddressLine>
+        <cbc:Line>IYT Corporation
+56A Avon Way
+Thereabouts
+Bridgtow
+
+ZZ991ZZ
+United Kingdom</cbc:Line>
+      </cac:AddressLine>
+    </cac:DeliveryAddress>
+  </cac:Shipment>
+</PackingList>

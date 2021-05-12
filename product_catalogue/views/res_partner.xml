@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_catalogues" model="ir.ui.view">
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" type="object" name="get_catalogue" icon="fa-book" string="Catalogue"/>
+            </div>
+        </field>
+    </record>
+</odoo>
+
+<!-- https://stackoverflow.com/questions/56754410/how-to-add-a-smart-button-in-sales-module-in-odoo12
+     https://www.youtube.com/watch?v=4_5Ia2wwrNo
+     https://www.cybrosys.com/blog/smart-buttons-odoo-13-->

@@ -16,7 +16,6 @@ class LibraryBook(models.Model):
     currency = fields.Many2one('res.currency', string="Currency")
     pages = fields.Integer('Number of Pages')
 
-
     def generate_book_data(self):
         file = genJSON(self)
         return file

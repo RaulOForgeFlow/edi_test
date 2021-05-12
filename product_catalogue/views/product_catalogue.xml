@@ -1,0 +1,45 @@
+<odoo>
+    <record id="product_catalogues_form" model="ir.ui.view">
+        <field name="name">Product Catalogue Tree</field>
+        <field name="model">product.catalogue</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                </group>
+                <group>
+                    <field name="partner_id" widget="many2many_tags"/>
+                    <field name="company_id"/>
+                </group>
+                <group>
+                    <field name="item_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_catalogue_tree_view" model="ir.ui.view">
+        <field name="name">Product Catalogue List</field>
+        <field name="model">product.catalogue</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="product_catalogue_action" model="ir.actions.act_window">
+        <field name="name">Product Catalogues</field>
+        <field name="res_model">product.catalogue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Product Catalogues"
+              id="product_catalogue_menu"
+              parent="sale.product_menu_catalog"
+              action="product_catalogue_action"/>
+
+
+</odoo>

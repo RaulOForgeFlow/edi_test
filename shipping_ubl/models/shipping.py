@@ -13,6 +13,8 @@ class Product(models.Model):
     _name = "stock.picking"
     _inherit = ["stock.picking", "base.ubl"]
 
+
+    # Should work with move_lines
     def _ubl_add_delivery(self, parent_node, ns,):
         scheduled_date = etree.SubElement(parent_node, ns["cbc"] + "ActualDeliveryDate")
         scheduled_date.text = str(self.scheduled_date)
@@ -42,7 +44,7 @@ class Product(models.Model):
         ubl_version = etree.SubElement(parent_node, ns["cbc"] + "UBLVersionID")
         ubl_version.text = version
         doc_id = etree.SubElement(parent_node, ns["cbc"] + "ID")
-        doc_id.text = str(self.id)
+        doc_id.text = self.name
         issue_date = etree.SubElement(parent_node, ns["cbc"] + "IssueDate")
         issue_date.text = date
         name = etree.SubElement(parent_node, ns["cbc"] + "Name")
@@ -61,6 +63,10 @@ class Product(models.Model):
         # make the relation with stock.move.line since
         for product in num_products:
             self._ubl_add_goods_item(product, line_root, ns)
+            # The following info can be taken from product
+            # image_1024(b), invoice_policy(str), lst_price(float), name(str), partner_ref(str), product_tmpl_id, weight(float), weight_uom_name(str)
+            # aspects that should be added currencyID='USD'>1000.0 (cost_currency_id.name, cost_currency_id.rate) && unitCode='C62'>1 (self.move_lines.product_uom.unece_code)
+            # self.backorder_id
 
         self._ubl_add_delivery(line_root, ns)
 
@@ -87,11 +93,13 @@ class Product(models.Model):
                 ID self.id
                 Actual Delivery Date self.scheduled_date
                 Delivery Address self.partner_id.contact_address
+                DeliveryParty
                 Carrier Party
                 
                 self.carrier_id
                     self.carrier_id.name
                     self.carrier_id.id
+                    trackign reference
                 self.location_dest_id (stcok.location)
                 self.location_id (stock.location)
         '''
