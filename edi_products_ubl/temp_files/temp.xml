@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+  <cbc:ID>Basic Catalogue</cbc:ID>
+  <cbc:IssueDate>2021-05-21</cbc:IssueDate>
+  <cac:ProviderParty>
+    <cac:PartyName>
+      <cbc:Name>My Company (Chicago)</cbc:Name>
+    </cac:PartyName>
+  </cac:ProviderParty>
+  <cac:ReceiverParty>
+    <cac:PartyName>
+      <cbc:Name>Daniel Reis</cbc:Name>
+    </cac:PartyName>
+  </cac:ReceiverParty>
+  <cac:CatalogueLine>
+    <cbc:ID>1</cbc:ID>
+    <cac:Item>
+      <cbc:Name>Customizable Desk (CONFIG)</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>[DESK0004] Customizable Desk (CONFIG) (Aluminium, Black)</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Legs</cbc:Name>
+        <cbc:Value>Aluminium</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Color</cbc:Name>
+        <cbc:Value>Black</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:ItemProperty>
+      <cbc:ValueQuantity>750.0</cbc:ValueQuantity>
+      <cbc:ValueQualifier>USD</cbc:ValueQualifier>
+    </cac:ItemProperty>
+  </cac:CatalogueLine>
+  <cac:CatalogueLine>
+    <cbc:ID>2</cbc:ID>
+    <cac:Item>
+      <cbc:Name>Conference Chair (CONFIG)</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>[E-COM12] Conference Chair (CONFIG) (Steel)</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>Legs</cbc:Name>
+        <cbc:Value>Steel</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:ItemProperty>
+      <cbc:ValueQuantity>16.5</cbc:ValueQuantity>
+      <cbc:ValueQualifier>USD</cbc:ValueQualifier>
+    </cac:ItemProperty>
+  </cac:CatalogueLine>
+</Catalogue>

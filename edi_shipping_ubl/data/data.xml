@@ -9,7 +9,7 @@
         <field name="name">Shipping Webservice</field>
         <field name="code">shipping</field>
         <field name="protocol">sftpShipping</field>
-        <field name="url">192.168.1.50</field>
+        <field name="url">192.168.1.64</field>
         <field name="username">ftpuser</field>
         <field name="password">userftpPassword</field>
         <field name="content_type">application/xml</field>

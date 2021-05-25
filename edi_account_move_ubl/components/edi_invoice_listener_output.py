@@ -4,7 +4,7 @@ from odoo.addons.component.core import Component
 class EdiInvoiceListenerOutput(Component):
     _name = "edi.invoice.listener.output"
     _inherit = "base.event.listener"
-    _apply_on = "account.move"
+    _apply_on = "account.move.import"
 
     def _get_invoice_backend(self, record):
         return record.env.ref("edi_account_move_ubl.invoice_backend")

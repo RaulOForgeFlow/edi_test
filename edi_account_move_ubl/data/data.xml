@@ -9,7 +9,7 @@
         <field name="name">Invoice Webservice</field>
         <field name="code">invoice_webservice</field>
         <field name="protocol">sftpInvoice</field>
-        <field name="url">192.168.1.50</field>
+        <field name="url">192.168.1.64</field>
         <field name="username">ftpuser</field>
         <field name="password">userftpPassword</field>
         <field name="content_type">application/xml</field>

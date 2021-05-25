@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 
 class Product(models.Model):
-    _name = "product.pricelist"
-    _inherit = ["product.pricelist", "edi.exchange.consumer.mixin"]
+    _name = "product.catalogue"
+    _inherit = ["product.catalogue", "edi.exchange.consumer.mixin"]
 
     def send_product_button(self):
         self._event("on_post_product").notify(self)
