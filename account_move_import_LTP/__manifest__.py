@@ -13,6 +13,7 @@
         'base_iban',
         'base_business_document_import',
         'onchange_helper',
+        'base_ubl',
         ],
     'data': [],
     'installable': True,

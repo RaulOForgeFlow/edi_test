@@ -5,7 +5,7 @@
     'name': "EDI Account UBL",
     'summary': "EDI Exchange with UBL format",
     'version':'13.0.0.0.0',
-    'depends': ['base','edi','edi_webservice', 'account_invoice_ubl', 'account_move_import_LTP'],
-    'data': ['data/data.xml', 'views/account_move.xml'],
+    'depends': ['base','edi','edi_webservice','account_move_import_LTP', 'account_invoice_ubl'],
+    'data': ['data/data.xml', 'views/account_move.xml', 'wizards/account_move_import.xml'],
     'demo':[],
 }

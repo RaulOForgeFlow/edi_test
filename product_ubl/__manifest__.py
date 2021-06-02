@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "summary": "Generate Product Catalogue UBL XML",
     "author": "Ferran Coll, Odoo Community Association (OCA)",
-    "depends": ["product", "base_ubl"],
+    "depends": ["product", "base_ubl", 'product_catalogue'],
     "data": [],
     "installable": True,
 }

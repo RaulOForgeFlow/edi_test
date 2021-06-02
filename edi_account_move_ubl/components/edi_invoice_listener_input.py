@@ -7,7 +7,7 @@ from odoo.addons.component.core import Component
 class EdiInvoiceListenerInput(Component):
     _name = "edi.invoice.listener.input"
     _inherit = "base.event.listener"
-    _apply_on = ["account.move"]
+    _apply_on = ["account.move.import"]
 
     def _get_invoice_backend(self, record):
         return record.env.ref("edi_account_move_ubl.invoice_backend")
@@ -29,5 +29,5 @@ class EdiInvoiceListenerInput(Component):
             exchange_record.write(
                 {"edi_exchange_state": "input_pending"})
         exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_receive(exchange_record)
-        #exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_process(exchange_record)
+        exchange_record.backend_id.with_context(_edi_send_break_on_error=True).exchange_process(exchange_record)
 

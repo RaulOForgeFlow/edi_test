@@ -9,6 +9,6 @@
     "summary": "Exchange product catalogues in UBL format",
     "author": "Ferran Coll, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/edi/",
-    'depends': ['base','edi','edi_webservice', 'product_ubl'],
+    'depends': ['base','edi','edi_webservice', 'product_ubl','product_catalogue'],
     "data": ["views/product.xml", "data/data.xml"],
 }

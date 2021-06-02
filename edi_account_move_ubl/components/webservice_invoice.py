@@ -26,7 +26,9 @@ class WebserviceInvoice(Component):
     def getFTP(self, url, user, password):
         session = ftplib.FTP(url, user, password)
         localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_account_move_ubl/temp_files/temp.xml'
+        localfilepath2 = '/home/ferran/odoo-dev13/edi_test/TXD043935.xml'
 
+        '''
         # Change server directory
         session.cwd('/home/ftpuser/invoices')
 
@@ -39,4 +41,9 @@ class WebserviceInvoice(Component):
         xml_bytes = xml_string.encode(encoding="UTF-8")
         os.remove(localfilepath)
         session.quit()
+        '''
+        xml_string = open(localfilepath2).read()
+        xml_bytes = xml_string.encode(encoding="UTF-8")
+        session.quit()
+
         return xml_bytes

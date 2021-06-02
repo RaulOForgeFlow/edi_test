@@ -17,9 +17,6 @@ class AccountMove(models.Model):
         invoice_file_bytes = self.generate_ubl_xml_string()
         return invoice_file_bytes
 
-    def receive_invoice_button(self):
-        self._event("on_get_invoice").notify(self)
-
 
 
 

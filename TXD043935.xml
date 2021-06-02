@@ -1,0 +1,158 @@
+<?xml version="1.0" standalone="yes"?>
+<Document-Invoice>
+  <Invoice-Header>
+    <InvoiceNumber>TXD043935</InvoiceNumber>
+    <InvoiceDate>2021-05-18</InvoiceDate>
+    <InvoiceCurrency>EUR</InvoiceCurrency>
+    <InvoicePaymentDueDate>2021-06-17</InvoicePaymentDueDate>
+    <InvoicePaymentTerms>30 DAYS</InvoicePaymentTerms>
+    <CustomerOrderNo>SO78580</CustomerOrderNo>
+    <VendorNumber> </VendorNumber>
+  </Invoice-Header>
+  <Invoice-Parties>
+    <Buyer>
+      <TaxID>DK17940384</TaxID>
+      <RegisterNumber> </RegisterNumber>
+      <Name>GUBI A/S</Name>
+      <StreetAndNumber>Klubiensvej 7-9 / Prakhus 53</StreetAndNumber>
+      <CityName>Nordhavn</CityName>
+      <CountryName>DK</CountryName>
+    </Buyer>
+    <Payer>
+      <TaxID>DK17940384</TaxID>
+      <RegisterNumber> </RegisterNumber>
+      <Name>GUBI A/S</Name>
+      <StreetAndNumber>Klubiensvej 7-9 / Prakhus 53</StreetAndNumber>
+      <CityName>Nordhavn</CityName>
+      <CountryName>Denmark</CountryName>
+    </Payer>
+    <Seller>
+      <TaxID>LT352757716</TaxID>
+      <RegisterNumber>135275772</RegisterNumber>
+      <Name>LTP Texdan, UAB</Name>
+      <StreetAndNumber> </StreetAndNumber>
+      <CityName>Kėdainiai</CityName>
+      <CountryName>LT</CountryName>
+    </Seller>
+  </Invoice-Parties>
+  <Invoice-Lines>
+    <InvoiceLine>
+      <LineNo>1</LineNo>
+      <ItemNo>10081905</ItemNo>
+      <EAN> </EAN>
+      <OrderReference>SO78580-490-NTG</OrderReference>
+      <OrderReference2>PO43490-1</OrderReference2>
+      <OrderReference3>10081905</OrderReference3>
+      <InnerItemNo>FG4624-291376</InnerItemNo>
+      <ProductDescription>Frame: Beetle Lounge Chair - Fully Upholstered, Conic base &amp; Base Finish: Black Matt Base &amp; Front upholstery: Eros, Nevotex (31 Orange 07T1) &amp; Back upholstery: Eros, Nevotex (31 Orange 07T1) &amp; Piping: Same as Shell &amp; Glides : Standard Glides &amp; Beetle</ProductDescription>
+      <UnitOfMeasureCode>PCS</UnitOfMeasureCode>
+      <Quantity>2</Quantity>
+      <UnitAmount>204.42</UnitAmount>
+      <LineAmount>408.84</LineAmount>
+      <NetWeight>26</NetWeight>
+      <GrossWeight>32</GrossWeight>
+      <CurrencyCode>EUR</CurrencyCode>
+      <VariantCode> </VariantCode>
+      <PropertySet>
+        <PropertyText>Frame: Beetle Lounge Chair - Fully Upholstered, Conic base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Base Finish: Black Matt Base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Front upholstery: Eros, Nevotex (31 Orange 07T1)  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Back upholstery: Eros, Nevotex (31 Orange 07T1)  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Piping: Same as Shell  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Glides : Standard Glides  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Beetle Lounge Chair - Fully Upholstered, Conic base | Base Finish: Black Matt Base | Front upholstery: Eros, Nevotex (31 Orange 07T1) | Back upholstery: Eros, Nevotex (31 Orange 07T1) | Piping:Same as Shell | Glides: Standard Glides</PropertyText>
+      </PropertySet>
+    </InvoiceLine>
+    <InvoiceLine>
+      <LineNo>2</LineNo>
+      <ItemNo>10081906</ItemNo>
+      <EAN> </EAN>
+      <OrderReference>SO78580-491-NTG</OrderReference>
+      <OrderReference2>PO43491-1</OrderReference2>
+      <OrderReference3>10081906</OrderReference3>
+      <InnerItemNo>FG4608-291356</InnerItemNo>
+      <ProductDescription>Frame: Beetle Ottoman - Fully Upholstered, Conic base &amp; Base Finish: Black Matt Base &amp; Upholstered with: Eros, Nevotex (31 Orange 07T1) &amp; Piping: Same as Shell &amp; Glides : Standard Glides &amp; Beetle Ottoman - Fully Upholstered, Conic base | Base Finish:</ProductDescription>
+      <UnitOfMeasureCode>PCS</UnitOfMeasureCode>
+      <Quantity>1</Quantity>
+      <UnitAmount>115.77</UnitAmount>
+      <LineAmount>115.77</LineAmount>
+      <NetWeight>5.4</NetWeight>
+      <GrossWeight>7</GrossWeight>
+      <CurrencyCode>EUR</CurrencyCode>
+      <VariantCode> </VariantCode>
+      <PropertySet>
+        <PropertyText>Frame: Beetle Ottoman - Fully Upholstered, Conic base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Base Finish: Black Matt Base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Upholstered with: Eros, Nevotex (31 Orange 07T1)  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Piping: Same as Shell  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Glides : Standard Glides  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Beetle Ottoman - Fully Upholstered, Conic base | Base Finish: Black Matt Base | Upholstered with: Eros, Nevotex (31 Orange 07T1) | Piping:Same as Shell | Glides: Standard Glides</PropertyText>
+      </PropertySet>
+    </InvoiceLine>
+    <InvoiceLine>
+      <LineNo>3</LineNo>
+      <ItemNo> </ItemNo>
+      <EAN> </EAN>
+      <OrderReference> </OrderReference>
+      <OrderReference2> </OrderReference2>
+      <OrderReference3> </OrderReference3>
+      <InnerItemNo>140887</InnerItemNo>
+      <ProductDescription> </ProductDescription>
+      <UnitOfMeasureCode>PCS</UnitOfMeasureCode>
+      <Quantity>1</Quantity>
+      <UnitAmount>7.75</UnitAmount>
+      <LineAmount>7.75</LineAmount>
+      <NetWeight>20</NetWeight>
+      <GrossWeight>20</GrossWeight>
+      <CurrencyCode>EUR</CurrencyCode>
+      <VariantCode> </VariantCode>
+      <PropertySet>
+        <PropertyText>Frame: Beetle Ottoman - Fully Upholstered, Conic base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Base Finish: Black Matt Base  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Upholstered with: Eros, Nevotex (31 Orange 07T1)  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Piping: Same as Shell  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Glides : Standard Glides  </PropertyText>
+      </PropertySet>
+      <PropertySet>
+        <PropertyText> Beetle Ottoman - Fully Upholstered, Conic base | Base Finish: Black Matt Base | Upholstered with: Eros, Nevotex (31 Orange 07T1) | Piping:Same as Shell | Glides: Standard Glides</PropertyText>
+      </PropertySet>
+    </InvoiceLine>
+  </Invoice-Lines>
+  <Invoice-Summary>
+    <TotalLines>3</TotalLines>
+    <TotalInvoiceQuantity>4</TotalInvoiceQuantity>
+    <TotalNetAmount>532.36</TotalNetAmount>
+    <TotalTaxAmount>0</TotalTaxAmount>
+    <TotalGrossAmount>532.36</TotalGrossAmount>
+  </Invoice-Summary>
+</Document-Invoice>
