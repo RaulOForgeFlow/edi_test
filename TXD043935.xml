@@ -41,7 +41,7 @@
       <ItemNo>10081905</ItemNo>
       <EAN> </EAN>
       <OrderReference>SO78580-490-NTG</OrderReference>
-      <OrderReference2>PO43490-1</OrderReference2>
+      <OrderReference2>P00001-1</OrderReference2>
       <OrderReference3>10081905</OrderReference3>
       <InnerItemNo>FG4624-291376</InnerItemNo>
       <ProductDescription>Frame: Beetle Lounge Chair - Fully Upholstered, Conic base &amp; Base Finish: Black Matt Base &amp; Front upholstery: Eros, Nevotex (31 Orange 07T1) &amp; Back upholstery: Eros, Nevotex (31 Orange 07T1) &amp; Piping: Same as Shell &amp; Glides : Standard Glides &amp; Beetle</ProductDescription>
@@ -80,7 +80,7 @@
       <ItemNo>10081906</ItemNo>
       <EAN> </EAN>
       <OrderReference>SO78580-491-NTG</OrderReference>
-      <OrderReference2>PO43491-1</OrderReference2>
+      <OrderReference2>P00002-1</OrderReference2>
       <OrderReference3>10081906</OrderReference3>
       <InnerItemNo>FG4608-291356</InnerItemNo>
       <ProductDescription>Frame: Beetle Ottoman - Fully Upholstered, Conic base &amp; Base Finish: Black Matt Base &amp; Upholstered with: Eros, Nevotex (31 Orange 07T1) &amp; Piping: Same as Shell &amp; Glides : Standard Glides &amp; Beetle Ottoman - Fully Upholstered, Conic base | Base Finish:</ProductDescription>
@@ -113,13 +113,13 @@
     </InvoiceLine>
     <InvoiceLine>
       <LineNo>3</LineNo>
-      <ItemNo> </ItemNo>
+      <ItemNo>FURN_6666</ItemNo>
       <EAN> </EAN>
       <OrderReference> </OrderReference>
-      <OrderReference2> </OrderReference2>
+      <OrderReference2>P00003-1</OrderReference2>
       <OrderReference3> </OrderReference3>
-      <InnerItemNo>140887</InnerItemNo>
-      <ProductDescription> </ProductDescription>
+      <InnerItemNo>FURN_6666</InnerItemNo>
+      <ProductDescription>Acoustic Bloc Screens</ProductDescription>
       <UnitOfMeasureCode>PCS</UnitOfMeasureCode>
       <Quantity>1</Quantity>
       <UnitAmount>7.75</UnitAmount>

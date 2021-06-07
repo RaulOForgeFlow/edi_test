@@ -141,7 +141,7 @@ class AccountMoveImport(models.TransientModel):
                 'product_id': 31, #'product_id': product.id
                 'name': order_ref2[num_line] + ': ' + prod_description[num_line],
                 'account_id': product31.property_account_expense_id.id,
-                'quantity': int(quantity[num_line]),
+                'quantity': quantity[num_line],
                 'price_unit': float(unit_amount[num_line]),
                 'currency_id': invoice_line_currency_id[num_line],
                 'price_subtotal': float(line_amount[num_line]),
@@ -188,95 +188,4 @@ class AccountMoveImport(models.TransientModel):
             · in_refund --> Vendor Credit Note
             · out_receipt --> Sales Receipt
             · in_receipt --> Purchase Receipt        
-        '''
-
-        '''
-        process_mail()
-        process_attatchment()
-        create_invoice_from_attatchment()
-            xml_content = etree.fromstring()
-            for dte_xml in xml_content.xpath('//ns0:DTE', namespaces=XML_NAMESPACES):
-                document_number = self._get_document_number(dte_xml)
-                document_type_code = self._get_document_type_from_xml(dte_xml)
-                issuer_vat = self._get_dte_issuer_vat(dte_xml)
-                partner = self._get_partner(issuer_vat)
-                
-                with Form(self.env['account.move'].with_context(default_move_type=default_move_type, allowed_company_ids=[company_id],account_predictive_bills_disable_prediction=True)) as invoice_form:
-                    invoice_form.partner_id = partner
-                    invoice_form.invoice_source_email = from_address
-                    
-                    invoice_date = dte_xml.findtext('.//ns0:FchEmis', namespaces=XML_NAMESPACES)
-                    if invoice_date is not None:
-                        invoice_form.invoice_date = fields.Date.from_string(invoice_date)
-                        
-                    invoice_form.date = fields.Date.context_today(self.with_context(tz='America/Santiago'))
-                
-                    invoice_date_due = dte_xml.findtext('.//ns0:FchVenc', namespaces=XML_NAMESPACES)
-                    if invoice_date_due is not None:
-                        invoice_form.invoice_date_due = fields.Date.from_string(invoice_date_due)
-
-                    journal = self._get_dte_purchase_journal(company_id)
-                    if journal:
-                        invoice_form.journal_id = journal
-
-                    currency = self._get_dte_currency(dte_xml)
-                    if currency:
-                        invoice_form.currency_id = currency
-                        
-                    invoice_form.l10n_latam_document_type_id = document_type
-                    invoice_form.l10n_latam_document_number = document_number
-                    
-                    for invoice_line in self._get_dte_lines(dte_xml, company_id, partner.id):
- 
-                    
-                    
-                    def _get_dte_lines():
-                         invoice_lines = []
-                         for dte_line in dte_xml.findall('.//ns0:Detalle', namespaces=XML_NAMESPACES):
-                            product_code = dte_line.findtext('.//ns0:VlrCodigo', namespaces=XML_NAMESPACES)
-                            product_name = dte_line.findtext('.//ns0:NmbItem', namespaces=XML_NAMESPACES)
-                            product = self._get_vendor_product(product_code, product_name, company_id, partner_id)
-                            quantity = float(dte_line.findtext('.//ns0:QtyItem', default=1, namespaces=XML_NAMESPACES))
-                            price_unit = float(dte_line.findtext('.//ns0:PrcItem', default=dte_line.findtext('.//ns0:MontoItem', namespaces=XML_NAMESPACES), namespaces=XML_NAMESPACES))
-                        
-                            values = {
-                                'product': product,
-                                'name': product.name if product else dte_line.findtext('.//ns0:NmbItem', namespaces=XML_NAMESPACES),
-                                'quantity': quantity,
-                                'price_unit': price_unit,
-                                'discount': float(dte_line.findtext('.//ns0:DescuentoPct', default=0, namespaces=XML_NAMESPACES)),
-                                'default_tax': False
-                            }
-                            
-                            if (dte_xml.findtext('.//ns0:TasaIVA', namespaces=XML_NAMESPACES) is not None and dte_line.findtext('.//ns0:IndExe', namespaces=XML_NAMESPACES) is None):
-                                values['default_tax'] = True
-                                values['taxes'] = self._get_withholding_taxes(company_id, dte_line)
-                            invoice_lines.append(values)
-                            
-                    
-                    
-                    
-                    def _get_vendor_product(self, product_code, product_name, company_id, partner_id):
-        
-                        if partner_id:
-                            supplier_info_domain = [('name', '=', partner_id), ('company_id', 'in', [company_id, False])]
-                            if product_code:
-                                # 1st criteria
-                                supplier_info_domain.append(('product_code', '=', product_code))
-                            else:
-                                # 2nd criteria
-                                supplier_info_domain.append(('product_name', '=', product_name))
-                            supplier_info = self.env['product.supplierinfo'].sudo().search(supplier_info_domain, limit=1)
-                            if supplier_info:
-                                return supplier_info.product_id
-                        # 3rd criteria
-                        if product_code:
-                            product = self.env['product.product'].sudo().search([
-                                '|', ('default_code', '=', product_code), ('barcode', '=', product_code),
-                                ('company_id', 'in', [company_id, False]), ], limit=1)
-                            if product:
-                                return product
-                        # 4th criteria
-                        return self.env['product.product'].sudo().search([
-                            ('company_id', 'in', [company_id, False]), ('name', 'ilike', product_name)], limit=1)
         '''

@@ -15,5 +15,6 @@ class EdiInvoiceProcess(Component):
 
         file_content = self.exchange_record._get_file_content()
         xml_root = ET.fromstring(file_content)
-        self.exchange_record.record.parse_invoice(xml_root)
+        #self.exchange_record.record.parse_invoice(xml_root)
+        self.exchange_record.record.create_invoice_from_attachment(xml_root)
 
