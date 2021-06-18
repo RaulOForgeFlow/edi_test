@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="webservice_backend_form" model="ir.ui.view">
+        <field name="model">webservice.backend</field>
+        <field name="inherit_id" ref="webservice.webservice_backend_form_view" />
+        <field name="arch" type="xml">
+            <field name="content_type" position="before">
+                <field name="ftpDirectory" />
+            </field>
+        </field>
+    </record>
+</odoo>

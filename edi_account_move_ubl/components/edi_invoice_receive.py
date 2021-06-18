@@ -1,8 +1,5 @@
-# Copyright 2020 Creu Blanca
-# @author: Enric Tobella
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from odoo.addons.component.core import Component
+
 
 class EdiInvoiceReceive(Component):
     _name = "edi.webservice.receive.invoice"
@@ -19,5 +16,7 @@ class EdiInvoiceReceive(Component):
             self.exchange_record.backend_id.webservice_backend_id.url,
             self.exchange_record.backend_id.webservice_backend_id.username,
             self.exchange_record.backend_id.webservice_backend_id.password,
+            self.exchange_record.backend_id.webservice_backend_id.ftpDirectory,
+            self.exchange_record.record.invoice_company.ftp_subdirectory,
         )
         return book_response

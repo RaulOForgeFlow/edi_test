@@ -4,39 +4,35 @@
         <field name="name">Invoice Backend type</field>
         <field name="code">invoice</field>
     </record>
-
     <record id="invoice_webservice" model="webservice.backend">
         <field name="name">Invoice Webservice</field>
-        <field name="code">invoice_webservice</field>
+        <field name="code">invoice</field>
         <field name="protocol">sftpInvoice</field>
-        <field name="url">192.168.1.50</field>
+        <field name="url">192.168.1.64</field>
         <field name="username">ftpuser</field>
         <field name="password">userftpPassword</field>
+        <field name="ftpDirectory">/home/ftpuser/invoices</field>
         <field name="content_type">application/xml</field>
     </record>
-
     <record id="invoice_backend" model="edi.backend">
         <field name="name">Invoice</field>
         <field name="backend_type_id" ref="invoice_backend_type" />
         <field name="webservice_backend_id" ref="invoice_webservice" />
     </record>
-
     <record id="invoice_exchange_type" model="edi.exchange.type">
-        <field name="name">Invoice</field>
+        <field name="name">Sent Invoice</field>
         <field name="code">invoice</field>
-        <field name="backend_id" ref="invoice_backend"/>
+        <field name="backend_id" ref="invoice_backend" />
         <field name="backend_type_id" ref="invoice_backend_type" />
         <field name="direction">output</field>
         <field name="exchange_file_ext">xml</field>
     </record>
-
     <record id="invoice_update_exchange_type" model="edi.exchange.type">
-        <field name="name">Invoice Update</field>
+        <field name="name">Received Invoice</field>
         <field name="code">invoice_update</field>
-        <field name="backend_id" ref="invoice_backend"/>
+        <field name="backend_id" ref="invoice_backend" />
         <field name="backend_type_id" ref="invoice_backend_type" />
         <field name="direction">input</field>
         <field name="exchange_file_ext">xml</field>
     </record>
 </odoo>
-

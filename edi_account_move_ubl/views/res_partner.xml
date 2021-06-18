@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="ftp_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form.ftp</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[@name='internal_notes']" position="after">
+                <page string="EDI and FTP configuration" name="edi_configuration">
+                    <field name="ftp_subdirectory" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

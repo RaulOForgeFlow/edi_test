@@ -1,49 +1,58 @@
-# Copyright 2020 Creu Blanca
-# @author: Enric Tobella
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import ftplib
+import os
 
 from odoo.addons.component.core import Component
-import ftplib, os
+
 
 class WebserviceInvoice(Component):
     _name = "base.webservice.invoice"
     _usage = "webservice.request"
     _webservice_protocol = "sftpInvoice"
 
-    def uploadFTP(self, url, user, password, file_name):
+    def uploadFTP(self, url, user, password, file_name, ftpDirectory, ftp_subdirectory):
         session = ftplib.FTP(url, user, password)
 
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_account_move_ubl/temp_files/temp.xml'
+        # the path is the current one + the folder where
+        # temporary files are stored and later on deleted
+        filepath = (
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            + "/temp_files/"
+            + file_name
+        )
 
-        session.cwd('/home/ftpuser/invoices')
-        session.storbinary('STOR temp.xml', open(localfilepath, 'rb'))
+        # Change server directory
+        session.cwd(ftpDirectory + "/" + ftp_subdirectory)
+        # Upload the file
+        session.storbinary("STOR " + file_name, open(filepath, "rb"))
         session.quit()
 
         # Delete the temporary file
-        os.remove(localfilepath)
+        os.remove(filepath)
 
-
-    def getFTP(self, url, user, password):
+    def getFTP(self, url, user, password, ftpDirectory, ftp_subdirectory):
         session = ftplib.FTP(url, user, password)
-        localfilepath = '/home/ferran/odoo-dev13/edi_test/edi_account_move_ubl/temp_files/temp.xml'
-        localfilepath2 = '/home/ferran/odoo-dev13/edi_test/TXD043935.xml'
 
-        '''
-        # Change server directory
-        session.cwd('/home/ftpuser/invoices')
+        filepath = (
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "/temp_files/"
+        )
+
+        session.cwd(ftpDirectory + "/" + ftp_subdirectory)
+
+        # Sort the files by date and get the oldest one in the SFTP server
+        file_name = sorted(session.nlst(), key=lambda x: session.voidcmd(f"MDTM {x}"))[
+            0
+        ]
+        filepath += file_name
 
         # Get the file
-        session.retrbinary("RETR temp.xml", open(localfilepath, 'wb').write)
-        # Delete the file since it has been downloaded
-        session.delete('temp.xml')
+        session.retrbinary("RETR " + file_name, open(filepath, "wb").write)
 
-        xml_string = open(localfilepath).read()
+        # Delete the file since it has already been downloaded
+        session.delete(file_name)
+
+        xml_string = open(filepath).read()
         xml_bytes = xml_string.encode(encoding="UTF-8")
-        os.remove(localfilepath)
-        session.quit()
-        '''
-        xml_string = open(localfilepath2).read()
-        xml_bytes = xml_string.encode(encoding="UTF-8")
+        os.remove(filepath)
         session.quit()
 
         return xml_bytes

@@ -1,8 +1,7 @@
-from odoo.addons.component.core import Component
 from lxml import etree as ET
-import logging
 
-logger = logging.getLogger(__name__)
+from odoo.addons.component.core import Component
+
 
 class EdiInvoiceProcess(Component):
     _name = "edi.input.process.invoice"
@@ -15,6 +14,4 @@ class EdiInvoiceProcess(Component):
 
         file_content = self.exchange_record._get_file_content()
         xml_root = ET.fromstring(file_content)
-        #self.exchange_record.record.parse_invoice(xml_root)
         self.exchange_record.record.create_invoice_from_attachment(xml_root)
-
